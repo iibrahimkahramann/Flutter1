@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,44 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Nunito"),
-      home: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            title: Text(
-              'Uygulamam',
-              style:
-                  TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
-            ),
-            backgroundColor: Colors.indigo,
-            centerTitle: true,
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(
-                  onPressed: () => print('Bana Tıkladın'),
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.indigo),
-                  child: Text('Bana Tıkla'),
-                ),
-                TextButton(
-                  onPressed: () => print('Bana Tıkladın'),
-                  child: Text('Bana Tıkla'),
-                  style: TextButton.styleFrom(backgroundColor: Colors.amber),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: Colors.red,
-                    size: 40,
-                  ),
-                )
-              ],
-            ),
-          )),
+      home: const HomeScreen(),
     );
   }
 }
